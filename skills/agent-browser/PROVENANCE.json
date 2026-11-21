@@ -1,0 +1,8 @@
+{
+  "name": "agent-browser",
+  "repository": "vercel-labs/agent-browser",
+  "commit": "d2dfc782ccdd79d25a9b4f0acced9321789cecb8",
+  "path": "skills/agent-browser",
+  "license": "Apache-2.0",
+  "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+}

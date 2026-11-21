@@ -1,0 +1,8 @@
+{
+  "name": "hyperframes",
+  "repository": "heygen-com/hyperframes",
+  "commit": "c7a6c9315bf1237bce715471cde268b32a21bb0b",
+  "path": "skills/hyperframes",
+  "license": "Apache-2.0",
+  "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+}

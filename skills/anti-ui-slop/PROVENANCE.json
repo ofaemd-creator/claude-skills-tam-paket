@@ -1,0 +1,8 @@
+{
+  "name": "anti-ui-slop",
+  "repository": "uizze/uizze",
+  "commit": "fc401e9e654cbafe427b0c98142fc8bccd0c4e7e",
+  "path": "skills/anti-ui-slop",
+  "license": "MIT",
+  "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+}

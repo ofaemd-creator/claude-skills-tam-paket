@@ -1,11 +1,11 @@
 ---
 name: languagetool-check
-description: Makale metnini yerel, çevrimdışı LanguageTool 6.6 ile dilbilgisi/yazım/tekrar denetiminden geçirir (Paperpal/Grammarly tarzı ikinci göz). İngilizce (en-US/en-GB) içindir, Türkçe desteği yoktur; metin bilgisayardan çıkmaz. "Dilbilgisi kontrolü", "grammar check", "LanguageTool", dil düzenlemesinden sonra son kontrol istendiğinde kullan.
+description: LanguageTool ayrıca kurulmuşsa makale metnini yerel, çevrimdışı LanguageTool ile dilbilgisi/yazım/tekrar denetiminden geçirir (Paperpal/Grammarly tarzı ikinci göz). İngilizce (en-US/en-GB) içindir, Türkçe desteği yoktur; metin bilgisayardan çıkmaz. "Dilbilgisi kontrolü", "grammar check", "LanguageTool", dil düzenlemesinden sonra son kontrol istendiğinde kullan.
 ---
 
 # LanguageTool denetimi (yerel)
 
-Kurulum: resmî paketi https://languagetool.org/download/LanguageTool-stable.zip adresinden indirip açın; klasörü `LANGUAGETOOL_HOME` ortam değişkeniyle gösterin (varsayılan `~/LanguageTool/LanguageTool-6.6`). Java 17+ gerekir. Denetim ağ kullanmaz.
+Bu skill LanguageTool veya Java kurmaz. Metin ancak gerçekten yerel LanguageTool çalıştırıldığında çevrimdışı denetlenir; asistanın kendi işlem ortamı bundan ayrıdır. Kurulum: resmî paketi https://languagetool.org/download/LanguageTool-stable.zip adresinden indirip açın; klasörü `LANGUAGETOOL_HOME` ortam değişkeniyle gösterin (varsayılan `~/LanguageTool/LanguageTool-6.6`). Java 17+ gerekir. Denetim ağ kullanmaz.
 
 ## Çalıştır
 

@@ -1,0 +1,8 @@
+{
+  "name": "ai-seo",
+  "repository": "coreyhaines31/marketingskills",
+  "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+  "path": "skills/ai-seo",
+  "license": "MIT",
+  "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+}

@@ -1,0 +1,101 @@
+{
+  "version": "1.1.0",
+  "added_sources": [
+    {
+      "name": "anti-ui-slop",
+      "repository": "uizze/uizze",
+      "commit": "fc401e9e654cbafe427b0c98142fc8bccd0c4e7e",
+      "path": "skills/anti-ui-slop",
+      "license": "MIT",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "canvas-design",
+      "repository": "anthropics/skills",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "path": "skills/canvas-design",
+      "license": "Apache-2.0",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "hyperframes",
+      "repository": "heygen-com/hyperframes",
+      "commit": "c7a6c9315bf1237bce715471cde268b32a21bb0b",
+      "path": "skills/hyperframes",
+      "license": "Apache-2.0",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "video-use",
+      "repository": "browser-use/video-use",
+      "commit": "43cfc566833548093455c9d4a46bd69913b7e552",
+      "path": "",
+      "license": "MIT",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "video-lens",
+      "repository": "kar2phi/video-lens",
+      "commit": "fa14db0e80b83be1214bfa16e117cac9701785e8",
+      "path": "skills/video-lens",
+      "license": "MIT",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "agent-browser",
+      "repository": "vercel-labs/agent-browser",
+      "commit": "d2dfc782ccdd79d25a9b4f0acced9321789cecb8",
+      "path": "skills/agent-browser",
+      "license": "Apache-2.0",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "ai-seo",
+      "repository": "coreyhaines31/marketingskills",
+      "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+      "path": "skills/ai-seo",
+      "license": "MIT",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "grill-me",
+      "repository": "mattpocock/skills",
+      "commit": "abeeaf95660ba9e8b7c753eb38f441ca707a8823",
+      "path": "skills/productivity/grill-me",
+      "license": "MIT",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "caveman",
+      "repository": "JuliusBrussee/caveman",
+      "commit": "a192894723a8f47e7f504c7b5041967ff1f18e55",
+      "path": "skills/caveman",
+      "license": "Apache-2.0",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "academic-paper",
+      "repository": "Imbad0202/academic-research-skills",
+      "commit": "00315dfea67cba974583debae32b77bdce659301",
+      "path": "academic-paper",
+      "license": "CC-BY-NC-4.0",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "academic-paper-reviewer",
+      "repository": "Imbad0202/academic-research-skills",
+      "commit": "00315dfea67cba974583debae32b77bdce659301",
+      "path": "academic-paper-reviewer",
+      "license": "CC-BY-NC-4.0",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    },
+    {
+      "name": "academic-pipeline",
+      "repository": "Imbad0202/academic-research-skills",
+      "commit": "00315dfea67cba974583debae32b77bdce659301",
+      "path": "academic-pipeline",
+      "license": "CC-BY-NC-4.0",
+      "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+    }
+  ]
+}

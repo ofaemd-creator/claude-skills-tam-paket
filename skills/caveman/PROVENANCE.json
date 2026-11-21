@@ -1,0 +1,8 @@
+{
+  "name": "caveman",
+  "repository": "JuliusBrussee/caveman",
+  "commit": "a192894723a8f47e7f504c7b5041967ff1f18e55",
+  "path": "skills/caveman",
+  "license": "Apache-2.0",
+  "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+}

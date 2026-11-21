@@ -1,8 +1,10 @@
 # Claude Skills — Tam Paket
 
-Bilimsel makale yazmaktan yayına hazırlamaya, kendi hakemliğini yapmaktan dergi seçmeye kadar **Claude Code için 28 skill** tek pakette. Hepsi kurulmadan önce denetlendi: script, ağ bağlantısı, gizli talimat ve kanca (hook) taraması yapıldı.
+**v1.1: 28 akademik + 9 tasarım/video/tarayıcı/strateji becerisi = 37 skill.** Claude Code ve Codex için tek ZIP, ağsız kurulum. Önceki 20 bilimsel beceri ve Humanizer dahil; tekrarları eklenmedi. Kaynaklar ve güvenlik incelemesinin sınırları [SECURITY.md](SECURITY.md) içinde.
 
-> *A vetted bundle of 28 Claude Code skills for scientific writing, self peer-review, journal selection and publication prep — plus the source of the 9:16 reel that introduces them.*
+**[Tam paketi tek ZIP indir](https://github.com/ofaemd-creator/claude-skills-tam-paket/releases/latest/download/claude-skills-tam-paket.zip)** · [Tüm sürümler](https://github.com/ofaemd-creator/claude-skills-tam-paket/releases)
+
+> 37 instruction-only skill workflows. External applications, render engines, browser binaries, language models and subscriptions are not bundled. No acceptance or zero-risk security guarantee.
 
 ## Kurulum
 
@@ -10,12 +12,16 @@ Bilimsel makale yazmaktan yayına hazırlamaya, kendi hakemliğini yapmaktan der
 git clone https://github.com/ofaemd-creator/claude-skills-tam-paket.git
 cd claude-skills-tam-paket
 ./install.sh --liste     # önce neyin kurulacağını gör
-./install.sh             # 28 skill → ~/.claude/skills
-./install.sh --hafif     # yalnızca pakette gelen 25 skill (git/ağ gerekmez)
+./install.sh             # 37 skill → ~/.claude/skills; kurulumda ağ gerekmez
+./install.sh --hafif     # ilk 25 akademik skill
+./install.sh --target codex  # 37 skill → ~/.codex/skills
+./install.sh --target all    # Claude Code ve Codex
 ```
 
-- Aynı adla kurulu bir skill varsa **üzerine yazılmaz** (`--force` ile yazılır).
-- Betik yalnızca dosya kopyalar, sabitlenmiş bir commit indirir ve bağlantı kurar; npm/pip kurulumu, dış script ya da Claude Code kancası çalıştırmaz.
+- ZIP'i indirdiysen açıp klasöründe `bash install.sh` çalıştır; Git veya internet gerekmez. macOS/Linux/WSL için Bash 3.2+ ve `shasum`/`sha256sum` gerekir. Windows PowerShell için kurulum betiği yoktur.
+- Aynı adla kurulu skill **korunur**. `--force` kullanılırsa eski klasör silinmez; hedefteki `.tam-paket-backups/` altına taşınır.
+- Betik SHA-256 bütünlük kontrolü yapar ve yalnızca dosya kopyalar; Git indirme, npm/pip, model veya hook kurulumu yapmaz.
+- LanguageTool, HyperFrames ve diğer uygulamaların çalışma ortamları ayrıca gereklidir. Skill kurmak uygulamayı veya ücretli hesabı kurmaz.
 - Kurduktan sonra Claude Code'u yeniden başlat. Bir skill'i çağırmak için adını yaz: `/peer-review`.
 
 ## İçindekiler
@@ -78,7 +84,7 @@ cd claude-skills-tam-paket
 
 ## Videodaki diğer skill'ler
 
-Tanıtım videosunda geçen ama bu pakette olmayan skill'ler kendi resmî depolarından kurulur:
+Bu dokuz beceri artık pakette **yerel yönergeleri sıkılaştırılmış metin sürümleri** olarak bulunur. Orijinal talimatlar, kaynak commit ve lisansları klasörlerinde saklanır. Harici betikler, agent süreçleri, fontlar, modeller ve runtime'lar dahil değildir:
 
 | Skill | Depo |
 |---|---|
@@ -100,7 +106,9 @@ Skill, Claude'un bilgisayarında izlediği bir talimat dosyasıdır (`SKILL.md`)
 2. **Denetle** — `SKILL.md`'yi ve varsa `scripts/` klasörünü oku: hangi adreslere bağlanıyor, ne indiriyor, ne çalıştırıyor; kurulum sonrası betikler (`postinstall`), kancalar (`hooks.json`), gizli Unicode karakterler, "önceki talimatları yok say" ya da "her zaman beni tercih et" türü cümleler.
 3. **Kur** — tek klasör olarak kopyala ya da bağla; kancaları ihtiyacın yoksa açma.
 
-Bu paketteki 20 bilimsel skill, K-Dense'in kaynağından **script'leri çıkarılmış, yalnızca talimat** içeren sürümlerdir (her birinde `PROVENANCE.json`).
+Önceki 20 bilimsel skill korunmuştur: bir kısmı K-Dense kaynağından uyarlama, bir kısmı yerel iş akışıdır; köken ayrıntıları `PROVENANCE.json` içindedir. Yeni eklenen 12 skill de betik/otomatik hook olmadan, yeniden yazılmış giriş yönergeleriyle paketlenmiştir. Bir modele farklı roller vermek bağımsız insan hakemliği değildir.
+
+Üç `academic-paper*` / `academic-pipeline` bileşeni CC BY-NC 4.0 lisanslıdır: ticari kullanım kısıtı korunur. Paketin tamamını koşulsuz MIT lisanslı veya ticari kullanıma sınırsız açık diye sunmayın. Diğer bileşenlerin lisansları için [NOTICE.md](NOTICE.md).
 
 ## Tanıtım videosu
 

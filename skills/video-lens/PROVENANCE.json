@@ -1,0 +1,8 @@
+{
+  "name": "video-lens",
+  "repository": "kar2phi/video-lens",
+  "commit": "fa14db0e80b83be1214bfa16e117cac9701785e8",
+  "path": "skills/video-lens",
+  "license": "MIT",
+  "modifications": "Replaced active entrypoint with dependency-free local workflow; retained upstream text as non-executable reference. Omitted scripts, agents, hooks, runtime dependencies and assets."
+}
