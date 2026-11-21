@@ -104,7 +104,7 @@ Bu paketteki 20 bilimsel skill, K-Dense'in kaynağından **script'leri çıkarı
 
 ## Tanıtım videosu
 
-`video/` klasörü, paketi tanıtan 9:16 Reels videosunun [HyperFrames](https://github.com/heygen-com/hyperframes) kaynağıdır. Kendi listenle yeniden üretmek için `video/README.md`'ye bak.
+`video/` klasörü, skill tanıtım Reels'i için açık kaynak bir [HyperFrames](https://github.com/heygen-com/hyperframes) şablonudur: `skills.json`'daki listeyi değiştirip kendi 9:16 videonu üretebilirsin. Ayrıntılar `video/README.md`'de.
 
 ## Lisans ve kaynaklar
 
