@@ -7,7 +7,7 @@
 | `humanizer` | Siqi Chen | MIT © 2025 Siqi Chen | Klasördeki `LICENSE` |
 | `ai-writing-detox`, `academic-writing` | [jamditis/claude-skills-journalism](https://github.com/jamditis/claude-skills-journalism) | MIT © 2025 Joe Amditis | Klasördeki `LICENSE` |
 | `verify-citations` | [Sketchjar/stipple-agent-skills](https://github.com/Sketchjar/stipple-agent-skills) | Apache-2.0 | `SKILL.md` üst bilgisinde |
-| `academic-paper`, `academic-paper-reviewer`, `academic-pipeline` | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | CC BY-NC 4.0 © 2026 Cheng-I Wu | **Pakete dahil değil**; `install.sh --tam` resmî depodan sabit commit `00315df`'i indirir. Ticari olmayan kullanım. |
+| `academic-paper`, `academic-paper-reviewer`, `academic-pipeline` | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | CC BY-NC 4.0 © 2026 Cheng-I Wu | **Pakete dahil değil**; `install.sh` resmî depodan sabit commit `00315df`'i indirir. Ticari olmayan kullanım. |
 | Ses efektleri (`video/assets/sfx`) | Pixabay | Pixabay Content License | `video/assets/sfx/CREDITS.md` |
 | Seslendirme (`video/assets/vo`) | Google Gemini TTS ile üretildi | — | |
 | İkonlar (video kartları) | [Lucide](https://lucide.dev) | ISC | |

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Claude Skills — Tam Paket kurulumu
 # Kullanım:
-#   ./install.sh            # pakette gelen 25 skill'i kurar
-#   ./install.sh --tam      # + Imbad0202/academic-research-skills (sabit commit) bağlantıları
+#   ./install.sh            # 28 skill: pakette gelen 25 + Imbad0202/academic-research-skills'ten 3 (sabit commit)
+#   ./install.sh --hafif    # yalnızca pakette gelen 25 skill (ağ/git gerekmez)
 #   ./install.sh --liste    # kurulacakları gösterir, hiçbir şey yazmaz
 #   ./install.sh --force    # aynı adla kurulu skill'in üzerine yazar
 # Hedef klasör: CLAUDE_SKILLS_DIR (varsayılan ~/.claude/skills).
@@ -17,10 +17,10 @@ IMBAD_REPO="https://github.com/Imbad0202/academic-research-skills.git"
 IMBAD_SHA="00315dfea67cba974583debae32b77bdce659301"
 IMBAD_SKILLS=(academic-paper academic-paper-reviewer academic-pipeline)
 
-TAM=0; LISTE=0; FORCE=0
+TAM=1; LISTE=0; FORCE=0
 for a in "$@"; do
   case "$a" in
-    --tam) TAM=1 ;; --liste) LISTE=1 ;; --force) FORCE=1 ;;
+    --tam) TAM=1 ;; --hafif) TAM=0 ;; --liste) LISTE=1 ;; --force) FORCE=1 ;;
     -h|--help) sed -n '2,10p' "$0"; exit 0 ;;
     *) echo "Bilinmeyen seçenek: $a" >&2; exit 2 ;;
   esac
@@ -28,7 +28,7 @@ done
 
 if [ "$LISTE" = 1 ]; then
   echo "Pakette gelen skill'ler → $DEST"; ls "$HERE/skills"
-  echo; echo "--tam ile ayrıca (kaynak: $IMBAD_REPO @ ${IMBAD_SHA:0:7}):"; printf '%s\n' "${IMBAD_SKILLS[@]}"
+  echo; echo "Ayrıca (--hafif ile atlanır; kaynak: $IMBAD_REPO @ ${IMBAD_SHA:0:7}):"; printf '%s\n' "${IMBAD_SKILLS[@]}"
   exit 0
 fi
 

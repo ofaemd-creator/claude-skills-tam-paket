@@ -10,8 +10,8 @@ Bilimsel makale yazmaktan yayına hazırlamaya, kendi hakemliğini yapmaktan der
 git clone https://github.com/ofaemd-creator/claude-skills-tam-paket.git
 cd claude-skills-tam-paket
 ./install.sh --liste     # önce neyin kurulacağını gör
-./install.sh             # pakette gelen 25 skill → ~/.claude/skills
-./install.sh --tam       # + academic-paper / -reviewer / -pipeline (Imbad0202, sabit commit)
+./install.sh             # 28 skill → ~/.claude/skills
+./install.sh --hafif     # yalnızca pakette gelen 25 skill (git/ağ gerekmez)
 ```
 
 - Aynı adla kurulu bir skill varsa **üzerine yazılmaz** (`--force` ile yazılır).
@@ -29,13 +29,13 @@ cd claude-skills-tam-paket
 | `humanizer` | Bilimsel anlamı koruyarak daha doğal, açık anlatım |
 | `ai-writing-detox` | Yapay zekâ yazı kalıplarını (klişe, şişirme) temizler |
 | `languagetool-check` | Yerel, çevrimdışı LanguageTool ile İngilizce dilbilgisi ikinci kontrolü |
-| `academic-paper` *(--tam)* | 12 ajanlı makale yazım hattı; plan, özet, revizyon, atıf kontrolü, YZ beyanı |
+| `academic-paper` *(Imbad0202)* | 12 ajanlı makale yazım hattı; plan, özet, revizyon, atıf kontrolü, YZ beyanı |
 
 ### Kendi hakemliğin ve kanıt
 | Skill | Ne yapar |
 |---|---|
 | `peer-review` | Yayın öncesi hakem değerlendirmesi ve öncelikli düzeltme planı |
-| `academic-paper-reviewer` *(--tam)* | 5 koltuklu hakem paneli: dergi uyumu + 3 hakem + karşı görüşçü |
+| `academic-paper-reviewer` *(Imbad0202)* | 5 koltuklu hakem paneli: dergi uyumu + 3 hakem + karşı görüşçü |
 | `scientific-critical-thinking` | Yöntem, yanlılık, nedensellik ve kanıt düzeyinin eleştirel değerlendirmesi |
 | `statistical-analysis` | Test seçimi, varsayımlar, etki büyüklüğü, güç ve istatistik raporlama |
 | `academic-integrity-audit` | Atıf, metin benzerliği, etik, yazarlık ve YZ beyanı incelemesi |
@@ -70,7 +70,7 @@ cd claude-skills-tam-paket
 | Skill | Ne yapar |
 |---|---|
 | `academic-publication-pipeline` | Makaleye uygun skill'leri seçip yayın hazırlığını yönetir |
-| `academic-pipeline` *(--tam)* | Araştır → yaz → tutarlılık → hakem → düzelt → yeniden hakem → bitir |
+| `academic-pipeline` *(Imbad0202)* | Araştır → yaz → tutarlılık → hakem → düzelt → yeniden hakem → bitir |
 
 **Önerilen akış:** `academic-publication-pipeline` ile başla → `scientific-writing` ile yaz → `verify-citations` + `citation-management` ile kaynakları doğrula → `peer-review` / `academic-paper-reviewer` ile kendi hakemliğini yap → `academic-language-editing` + `languagetool-check` ile dili bitir → `academic-journal-selection` + `venue-templates` ile gönder.
 
