@@ -1,0 +1,60 @@
+<template>
+  <html data-composition-variables='[{"id":"num","type":"string","label":"Sıra","default":"07 / 12"},{"id":"cat","type":"string","label":"Kategori","default":"ARAŞTIRMA"},{"id":"name","type":"string","label":"Skill adı","default":"/literature-review"},{"id":"bg","type":"color","label":"Zemin","default":"#0d1226"},{"id":"fg","type":"color","label":"Yazı","default":"#eef1f6"},{"id":"accent","type":"color","label":"Vurgu","default":"#7cf0c8"}]'></html>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .c07-full { position: absolute; inset: 0; }
+    .c07-half { position: absolute; left: 0; width: 1080px; height: 960px; z-index: 4; }
+    #c07-bg { position: absolute; inset: 0; background: var(--bg, #0d1226); }
+    #c07-stage { position: absolute; inset: 0; color: var(--fg, #eef1f6); }
+    #c07-top { position: absolute; left: 88px; top: 250px; display: flex; gap: 22px; align-items: center; }
+    #c07-num { font: 700 38px/1 "JetBrains Mono", monospace; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+    #c07-chip { font: 400 34px/1 "Archivo Black", sans-serif; letter-spacing: 0.08em; background: var(--accent, #7cf0c8); color: var(--bg, #0d1226); padding: 12px 20px 10px; border-radius: 6px; }
+    #c07-namewrap { position: absolute; left: 88px; top: 470px; width: 860px; }
+    #c07-name { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 77px; line-height: 1.05; letter-spacing: -0.02em; white-space: nowrap; }
+    #c07-caret { display: inline-block; width: 0.5em; height: 73px; margin-left: 6px; vertical-align: -0.12em; background: var(--accent, #7cf0c8); }
+    #c07-rule { position: absolute; left: 88px; top: 700px; width: 200px; height: 12px; background: var(--accent, #7cf0c8); }
+    #c07-desc { position: absolute; left: 88px; top: 770px; width: 820px; font: 400 100px/1.04 "Archivo Black", sans-serif; letter-spacing: -0.01em; }
+    .c07-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.06em; }
+    .c07-w { display: inline-block; }
+    #c07-icon { position: absolute; left: 88px; top: 1110px; width: 200px; height: 200px; }
+    #c07-icon svg { width: 100%; height: 100%; fill: none; stroke: var(--accent, #7cf0c8); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    #c07-icon svg * { stroke-dasharray: 1; }
+    #c07-tex { position: absolute; left: 40px; top: 1440px; white-space: nowrap; font: 400 380px/1 "Archivo Black", sans-serif; color: transparent; -webkit-text-stroke: 4px var(--accent, #7cf0c8); opacity: 0.45; }
+  </style>
+  <div id="root" data-composition-id="card-07" data-width="1080" data-height="1920">
+    
+    <div id="c07-world-static" class="c07-full">
+      <div id="c07-bg"></div>
+      <div id="c07-stage" data-layout-allow-overflow>
+        <div id="c07-tex" data-var-text="cat" data-layout-ignore>ARAŞTIRMA</div>
+        <div id="c07-top">
+          <span id="c07-num" data-var-text="num">07 / 12</span>
+          <span id="c07-chip" data-var-text="cat">ARAŞTIRMA</span>
+        </div>
+        <div id="c07-namewrap"><span id="c07-name" data-var-text="name">/literature-review</span><span id="c07-caret"></span></div>
+        <div id="c07-rule"></div>
+        <div id="c07-desc"><span class="c07-wm"><span id="c07-w0" class="c07-w">Onlarca</span></span> <span class="c07-wm"><span id="c07-w1" class="c07-w">makale,</span></span> <span class="c07-wm"><span id="c07-w2" class="c07-w">tek</span></span> <span class="c07-wm"><span id="c07-w3" class="c07-w">sentez.</span></span></div>
+        <div id="c07-icon" data-layout-ignore><svg viewBox="0 0 24 24"><path pathLength="1" d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path pathLength="1" d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+      </div>
+    </div>
+    <div id="c07-prevA" class="c07-half" style="top:0;background:#eef1f6"></div><div id="c07-prevB" class="c07-half" style="top:960px;background:#eef1f6"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c07-prevA", { y: 0 }, { y: -960, duration: 0.28, ease: "power3.in" }, 0);
+    tl.fromTo("#c07-prevB", { y: 0 }, { y: 960, duration: 0.28, ease: "power3.in" }, 0);
+    tl.fromTo("#c07-stage", { y: 90 }, { y: 0, duration: 0.34, ease: "power4.out" }, 0.08);
+    tl.fromTo("#c07-top", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "power3.out" }, 0.08);
+    tl.fromTo("#c07-name", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.34, ease: "steps(18)" }, 0.1);
+    tl.fromTo("#c07-caret", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0.44);
+    tl.fromTo("#c07-caret", { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, 0.8);
+    tl.fromTo("#c07-caret", { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, 1.15);
+    tl.fromTo("#c07-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.22, ease: "power4.out" }, 0.2);
+    tl.fromTo(".c07-w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out", stagger: 0.07 }, 0.24);
+    tl.fromTo("#c07-icon svg *", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut", stagger: 0.06 }, 0.5);
+    tl.fromTo("#c07-icon", { rotation: -8, scale: 0.86 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.5);
+    tl.fromTo("#c07-tex", { x: 0 }, { x: -240, duration: 2.17, ease: "none" }, 0);
+    tl.fromTo("#c07-stage", { scale: 1 }, { scale: 1.06, duration: 0.1, ease: "power2.in", immediateRender: false }, 2.03);
+    window.__timelines["card-07"] = tl;
+  </script>
+</template>

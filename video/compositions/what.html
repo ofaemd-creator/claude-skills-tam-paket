@@ -1,0 +1,39 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #what-bg { position: absolute; inset: 0; background: #0d1226; }
+    #what-term {
+      position: absolute; left: 88px; top: 280px; width: 860px; border-radius: 18px; overflow: hidden;
+      background: #161d38; border: 2px solid #2a3560;
+    }
+    #what-bar { height: 64px; display: flex; gap: 14px; align-items: center; padding-left: 26px; background: #1d2648; }
+    .what-dot { width: 18px; height: 18px; border-radius: 50%; background: #3a4673; }
+    #what-dot1 { background: #ff4d2e; } #what-dot2 { background: #ffd23f; } #what-dot3 { background: #7cf0c8; }
+    #what-code { padding: 34px 36px 40px; font: 700 50px/1.55 "JetBrains Mono", monospace; color: #b9c3e6; white-space: pre; }
+    #what-l3 { color: #0d1226; background: #7cf0c8; border-radius: 6px; padding: 0 10px; margin-left: -10px; }
+    #what-t1, #what-t2 { position: absolute; left: 88px; width: 860px; font: 400 92px/1.05 "Archivo Black", sans-serif; letter-spacing: -0.015em; color: #eef1f6; }
+    #what-t1 { top: 800px; }
+    #what-t2 { top: 1010px; color: #7cf0c8; }
+  </style>
+  <div id="root" data-composition-id="what" data-width="1080" data-height="1920">
+    <div id="what-bg"></div>
+    <div id="what-term">
+      <div id="what-bar"><span id="what-dot1" class="what-dot"></span><span id="what-dot2" class="what-dot"></span><span id="what-dot3" class="what-dot"></span></div>
+      <div id="what-code"><div id="what-l1">~/.claude/skills/</div><div id="what-l2">└─ yeni-yetenek/</div><div id="what-l3wrap">   └─ <span id="what-l3">SKILL.md</span></div></div>
+    </div>
+    <div id="what-t1">Bir klasör.<br />Bir dosya.</div>
+    <div id="what-t2">Yeni bir yetenek.</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#what-term", { x: 300 }, { x: 0, duration: 0.26, ease: "power4.out" }, 0);
+    tl.fromTo("#what-l1", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.3, ease: "steps(17)" }, 0.12);
+    tl.fromTo("#what-l2", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.26, ease: "steps(15)" }, 0.45);
+    tl.fromTo("#what-l3wrap", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.24, ease: "steps(14)" }, 0.74);
+    tl.fromTo("#what-l3", { scale: 1 }, { scale: 1.08, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "left center" }, 1.0);
+    tl.fromTo("#what-t1", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.22, ease: "power4.out" }, 0.15);
+    tl.fromTo("#what-t2", { y: 40, opacity: 0, scale: 0.96 }, { y: 0, opacity: 1, scale: 1, duration: 0.24, ease: "power4.out", transformOrigin: "left center" }, 1.84);
+    tl.fromTo(["#what-term", "#what-t1", "#what-t2"], { x: 0 }, { x: -130, duration: 0.12, ease: "power3.in", immediateRender: false }, 3.48);
+    window.__timelines["what"] = tl;
+  </script>
+</template>

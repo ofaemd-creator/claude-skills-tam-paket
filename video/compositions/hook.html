@@ -1,0 +1,58 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #hook-bg { position: absolute; inset: 0; background: #1f3bff; }
+    #hook-grid { position: absolute; inset: 0 0 -240px 0; background-image: linear-gradient(rgba(255,255,255,0.07) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.07) 2px, transparent 2px); background-size: 120px 120px; }
+    #hook-cam { position: absolute; inset: 0; }
+    #hook-stack { position: absolute; left: 88px; top: 290px; width: 880px; display: flex; flex-direction: column; gap: 4px; }
+    .hook-w { font: 400 160px/0.94 "Archivo Black", sans-serif; letter-spacing: -0.03em; color: #f3f4ff; white-space: nowrap; }
+    #hook-w3 { color: #ffd23f; }
+    .hook-lm { display: inline-block; overflow: hidden; vertical-align: top; }
+    .hook-l { display: inline-block; }
+    .hook-chip {
+      position: absolute; padding: 14px 22px 12px; border-radius: 10px; white-space: nowrap;
+      font: 700 38px/1 "JetBrains Mono", monospace; color: #0d1226; background: #ffd23f;
+    }
+    .hook-chip.hook-alt { background: #f3f4ff; color: #1f3bff; }
+    .hook-chip.hook-ink { background: #0d1226; color: #7cf0c8; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div id="hook-bg"></div>
+    <div id="hook-grid" data-layout-ignore></div>
+    <div id="hook-cam" data-layout-allow-overflow>
+      <div id="hook-stack">
+        <div id="hook-w1" class="hook-w">CLAUDE’A</div>
+        <div id="hook-w2" class="hook-w"><span class="hook-lm"><span class="hook-l hook-l2">Y</span></span><span class="hook-lm"><span class="hook-l hook-l2">E</span></span><span class="hook-lm"><span class="hook-l hook-l2">N</span></span><span class="hook-lm"><span class="hook-l hook-l2">İ</span></span></div>
+        <div id="hook-w3" class="hook-w"><span class="hook-lm"><span class="hook-l hook-l3">Y</span></span><span class="hook-lm"><span class="hook-l hook-l3">E</span></span><span class="hook-lm"><span class="hook-l hook-l3">T</span></span><span class="hook-lm"><span class="hook-l hook-l3">E</span></span><span class="hook-lm"><span class="hook-l hook-l3">N</span></span><span class="hook-lm"><span class="hook-l hook-l3">E</span></span><span class="hook-lm"><span class="hook-l hook-l3">K</span></span></div>
+        <div id="hook-w4" class="hook-w"><span class="hook-lm"><span class="hook-l hook-l4">Y</span></span><span class="hook-lm"><span class="hook-l hook-l4">Ü</span></span><span class="hook-lm"><span class="hook-l hook-l4">K</span></span><span class="hook-lm"><span class="hook-l hook-l4">L</span></span><span class="hook-lm"><span class="hook-l hook-l4">E</span></span><span class="hook-lm"><span class="hook-l hook-l4">.</span></span></div>
+      </div>
+      <!-- skill chips burst out of the headline; fixed positions so every render matches -->
+      <div id="hook-c1" class="hook-chip" style="left:96px;top:1010px">/peer-review</div>
+      <div id="hook-c2" class="hook-chip hook-alt" style="left:560px;top:985px">/grill-me</div>
+      <div id="hook-c3" class="hook-chip hook-ink" style="left:150px;top:1100px">/hyperframes</div>
+      <div id="hook-c4" class="hook-chip" style="left:600px;top:1085px">/caveman</div>
+      <div id="hook-c5" class="hook-chip hook-alt" style="left:80px;top:1195px">/video-use</div>
+      <div id="hook-c6" class="hook-chip hook-ink" style="left:430px;top:1185px">/ai-seo</div>
+      <div id="hook-c7" class="hook-chip" style="left:250px;top:1285px">/verify-citations</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // frame 0 already shows the first word: the hook reads on the thumbnail
+    tl.fromTo("#hook-grid", { y: 0 }, { y: -120, duration: 2.2, ease: "none" }, 0);
+    [[".hook-l2", 0.3], [".hook-l3", 0.62], [".hook-l4", 1.0]].forEach(([sel, t]) => {
+      tl.fromTo(sel, { yPercent: 140 }, { yPercent: 0, duration: 0.2, ease: "power4.out", stagger: 0.022 }, t);
+    });
+    // camera punch on each landing word
+    [0.36, 0.7, 1.1].forEach((t) => {
+      tl.fromTo("#hook-cam", { scale: 1 }, { scale: 1.035, duration: 0.06, ease: "power2.out", transformOrigin: "30% 30%", immediateRender: false }, t);
+      tl.fromTo("#hook-cam", { scale: 1.035 }, { scale: 1, duration: 0.18, ease: "power2.out", immediateRender: false }, t + 0.06);
+    });
+    ["#hook-c1", "#hook-c2", "#hook-c3", "#hook-c4", "#hook-c5", "#hook-c6", "#hook-c7"].forEach((el, k) => {
+      const rot = [-8, 6, -4, 9, -6, 5, -3][k];
+      tl.fromTo(el, { scale: 0, rotation: rot * 3, y: -260, opacity: 0 }, { scale: 1, rotation: rot, y: 0, opacity: 1, duration: 0.32, ease: "back.out(2.2)" }, 1.2 + k * 0.05);
+    });
+    tl.fromTo("#hook-cam", { x: 0 }, { x: -300, duration: 0.14, ease: "power3.in", immediateRender: false }, 2.06);
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

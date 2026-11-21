@@ -1,0 +1,7 @@
+{
+  "type": "local gap-filling workflow",
+  "upstream_paths": [],
+  "repository": null,
+  "commit": null,
+  "changes": "Local entrypoint; no executables, assets, integrations or automatic vendor citations. No platform IP or models acquired."
+}

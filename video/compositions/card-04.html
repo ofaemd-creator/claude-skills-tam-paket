@@ -1,0 +1,59 @@
+<template>
+  <html data-composition-variables='[{"id":"num","type":"string","label":"Sıra","default":"04 / 12"},{"id":"cat","type":"string","label":"Kategori","default":"KURGU"},{"id":"name","type":"string","label":"Skill adı","default":"/video-use"},{"id":"bg","type":"color","label":"Zemin","default":"#ff4d2e"},{"id":"fg","type":"color","label":"Yazı","default":"#0d1226"},{"id":"accent","type":"color","label":"Vurgu","default":"#ffffff"}]'></html>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .c04-full { position: absolute; inset: 0; }
+    .c04-half { position: absolute; left: 0; width: 1080px; height: 960px; z-index: 4; }
+    #c04-bg { position: absolute; inset: 0; background: var(--bg, #ff4d2e); }
+    #c04-stage { position: absolute; inset: 0; color: var(--fg, #0d1226); }
+    #c04-top { position: absolute; left: 88px; top: 250px; display: flex; gap: 22px; align-items: center; }
+    #c04-num { font: 700 38px/1 "JetBrains Mono", monospace; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+    #c04-chip { font: 400 34px/1 "Archivo Black", sans-serif; letter-spacing: 0.08em; background: var(--accent, #ffffff); color: var(--bg, #ff4d2e); padding: 12px 20px 10px; border-radius: 6px; }
+    #c04-namewrap { position: absolute; left: 88px; top: 470px; width: 860px; }
+    #c04-name { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 110px; line-height: 1.05; letter-spacing: -0.02em; white-space: nowrap; }
+    #c04-caret { display: inline-block; width: 0.5em; height: 105px; margin-left: 6px; vertical-align: -0.12em; background: var(--accent, #ffffff); }
+    #c04-rule { position: absolute; left: 88px; top: 700px; width: 200px; height: 12px; background: var(--accent, #ffffff); }
+    #c04-desc { position: absolute; left: 88px; top: 770px; width: 820px; font: 400 100px/1.04 "Archivo Black", sans-serif; letter-spacing: -0.01em; }
+    .c04-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.06em; }
+    .c04-w { display: inline-block; }
+    #c04-icon { position: absolute; left: 88px; top: 1110px; width: 200px; height: 200px; }
+    #c04-icon svg { width: 100%; height: 100%; fill: none; stroke: var(--accent, #ffffff); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    #c04-icon svg * { stroke-dasharray: 1; }
+    #c04-tex { position: absolute; left: 40px; top: 1440px; white-space: nowrap; font: 400 380px/1 "Archivo Black", sans-serif; color: transparent; -webkit-text-stroke: 4px var(--accent, #ffffff); opacity: 0.45; }
+  </style>
+  <div id="root" data-composition-id="card-04" data-width="1080" data-height="1920">
+    
+    <div id="c04-world-static" class="c04-full">
+      <div id="c04-bg"></div>
+      <div id="c04-stage" data-layout-allow-overflow>
+        <div id="c04-tex" data-var-text="cat" data-layout-ignore>KURGU</div>
+        <div id="c04-top">
+          <span id="c04-num" data-var-text="num">04 / 12</span>
+          <span id="c04-chip" data-var-text="cat">KURGU</span>
+        </div>
+        <div id="c04-namewrap"><span id="c04-name" data-var-text="name">/video-use</span><span id="c04-caret"></span></div>
+        <div id="c04-rule"></div>
+        <div id="c04-desc"><span class="c04-wm"><span id="c04-w0" class="c04-w">Sohbetle</span></span> <span class="c04-wm"><span id="c04-w1" class="c04-w">video</span></span> <span class="c04-wm"><span id="c04-w2" class="c04-w">kurgusu.</span></span></div>
+        <div id="c04-icon" data-layout-ignore><svg viewBox="0 0 24 24"><circle pathLength="1" cx="6" cy="6" r="3"/><circle pathLength="1" cx="6" cy="18" r="3"/><path pathLength="1" d="M20 4 8.12 15.88"/><path pathLength="1" d="M14.47 14.48 20 20"/><path pathLength="1" d="M8.12 8.12 12 12"/></svg></div>
+      </div>
+    </div>
+    <div id="c04-flash" class="c04-full" style="background:#ffffff;z-index:5"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c04-flash", { opacity: 1 }, { opacity: 0, duration: 0.16, ease: "power2.out" }, 0.02);
+    tl.fromTo("#c04-stage", { scale: 1.08 }, { scale: 1, duration: 0.3, ease: "power3.out", transformOrigin: "30% 35%" }, 0);
+    tl.fromTo("#c04-top", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "power3.out" }, 0.08);
+    tl.fromTo("#c04-name", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.34, ease: "steps(10)" }, 0.1);
+    tl.fromTo("#c04-caret", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0.44);
+    tl.fromTo("#c04-caret", { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, 0.8);
+    tl.fromTo("#c04-caret", { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, 1.15);
+    tl.fromTo("#c04-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.22, ease: "power4.out" }, 0.2);
+    tl.fromTo(".c04-w", { yPercent: 105 }, { yPercent: 0, duration: 0.24, ease: "power4.out", stagger: 0.07 }, 0.24);
+    tl.fromTo("#c04-icon svg *", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut", stagger: 0.06 }, 0.45);
+    tl.fromTo("#c04-icon", { rotation: -8, scale: 0.86 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.45);
+    tl.fromTo("#c04-tex", { x: 0 }, { x: -240, duration: 2.49, ease: "none" }, 0);
+    tl.fromTo("#c04-stage", { x: 0 }, { x: -260, duration: 0.14, ease: "power3.in", immediateRender: false }, 2.35);
+    window.__timelines["card-04"] = tl;
+  </script>
+</template>

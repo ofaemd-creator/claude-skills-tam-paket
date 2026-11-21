@@ -1,0 +1,10 @@
+{
+  "type": "locally hardened adaptation",
+  "upstream_paths": [
+    "skills/research-lookup",
+    "skills/paper-lookup"
+  ],
+  "repository": "K-Dense-AI/scientific-agent-skills",
+  "commit": "ec59a29a03d5c40f73ab40878df04860bc00e876",
+  "changes": "Local entrypoint; no executables, assets, integrations or automatic vendor citations. No platform IP or models acquired."
+}

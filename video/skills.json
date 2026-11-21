@@ -1,0 +1,112 @@
+{
+  "cardSeconds": 1.9,
+  "palettes": [
+    {
+      "bg": "#1f3bff",
+      "fg": "#f3f4ff",
+      "accent": "#ffd23f"
+    },
+    {
+      "bg": "#eef1f6",
+      "fg": "#0d1226",
+      "accent": "#ff4d2e"
+    },
+    {
+      "bg": "#0d1226",
+      "fg": "#eef1f6",
+      "accent": "#7cf0c8"
+    },
+    {
+      "bg": "#ff4d2e",
+      "fg": "#0d1226",
+      "accent": "#ffffff"
+    }
+  ],
+  "skills": [
+    {
+      "cat": "TASARIM",
+      "name": "/anti-ui-slop",
+      "desc": "Sıradan arayüze son.",
+      "source": "https://github.com/uizze/uizze",
+      "icon": "layout"
+    },
+    {
+      "cat": "GÖRSEL",
+      "name": "/canvas-design",
+      "desc": "Fikirden afişe.",
+      "source": "https://github.com/anthropics/skills",
+      "icon": "image"
+    },
+    {
+      "cat": "VİDEO",
+      "name": "/hyperframes",
+      "desc": "Bu video bununla yapıldı.",
+      "source": "https://github.com/heygen-com/hyperframes",
+      "icon": "play"
+    },
+    {
+      "cat": "KURGU",
+      "name": "/video-use",
+      "desc": "Sohbetle video kurgusu.",
+      "source": "https://github.com/browser-use/video-use",
+      "icon": "scissors"
+    },
+    {
+      "cat": "ÖZET",
+      "name": "/video-lens",
+      "desc": "Videoyu tek sayfada özetler.",
+      "source": "https://github.com/kar2phi/video-lens",
+      "icon": "eye"
+    },
+    {
+      "cat": "TARAYICI",
+      "name": "/agent-browser",
+      "desc": "Siteyi gezer, formu doldurur.",
+      "source": "https://github.com/vercel-labs/agent-browser",
+      "icon": "globe"
+    },
+    {
+      "cat": "ARAŞTIRMA",
+      "name": "/literature-review",
+      "desc": "Onlarca makale, tek sentez.",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "icon": "book"
+    },
+    {
+      "cat": "BİLİM",
+      "name": "/peer-review",
+      "desc": "Göndermeden önce hakem gözü.",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "icon": "search"
+    },
+    {
+      "cat": "KAYNAK",
+      "name": "/verify-citations",
+      "desc": "Uydurma kaynağa geçit yok.",
+      "size": 80,
+      "source": "https://github.com/Sketchjar/stipple-agent-skills",
+      "icon": "shield"
+    },
+    {
+      "cat": "SEO",
+      "name": "/ai-seo",
+      "desc": "Yapay zekâ aramasında görün.",
+      "source": "https://github.com/coreyhaines31/marketingskills",
+      "icon": "trend"
+    },
+    {
+      "cat": "STRATEJİ",
+      "name": "/grill-me",
+      "desc": "Planını acımasızca sorgular.",
+      "source": "https://github.com/mattpocock/skills",
+      "icon": "flame"
+    },
+    {
+      "cat": "TASARRUF",
+      "name": "/caveman",
+      "desc": "Az kelime. Az token.",
+      "source": "https://github.com/JuliusBrussee/caveman",
+      "icon": "zap"
+    }
+  ]
+}

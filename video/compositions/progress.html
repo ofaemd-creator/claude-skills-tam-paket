@@ -1,0 +1,17 @@
+<template>
+  <html data-composition-variables='[{"id":"seconds","type":"number","label":"Süre","default":34.4,"min":1,"max":120,"unit":"s"}]'></html>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #progress-track { position: absolute; left: 88px; right: 160px; top: 190px; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.22); mix-blend-mode: difference; }
+    #progress-fill { position: absolute; inset: 0; border-radius: 3px; background: #ffffff; }
+  </style>
+  <div id="root" data-composition-id="progress" data-width="1080" data-height="1920">
+    <div id="progress-track" data-layout-ignore><div id="progress-fill"></div></div>
+  </div>
+  <script>
+    const { seconds } = window.__hyperframes.getVariables();
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#progress-fill", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: seconds, ease: "none" }, 0);
+    window.__timelines["progress"] = tl;
+  </script>
+</template>

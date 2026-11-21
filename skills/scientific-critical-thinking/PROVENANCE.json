@@ -1,0 +1,6 @@
+{
+  "repository": "K-Dense-AI/scientific-agent-skills",
+  "commit": "ec59a29a03d5c40f73ab40878df04860bc00e876",
+  "upstream_path": "skills/scientific-critical-thinking",
+  "modifications": "Replaced entrypoint; omitted all executable files, assets and integrations; references retained as non-executable background."
+}

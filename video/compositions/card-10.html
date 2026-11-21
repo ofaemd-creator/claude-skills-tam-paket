@@ -1,0 +1,59 @@
+<template>
+  <html data-composition-variables='[{"id":"num","type":"string","label":"Sıra","default":"10 / 12"},{"id":"cat","type":"string","label":"Kategori","default":"SEO"},{"id":"name","type":"string","label":"Skill adı","default":"/ai-seo"},{"id":"bg","type":"color","label":"Zemin","default":"#eef1f6"},{"id":"fg","type":"color","label":"Yazı","default":"#0d1226"},{"id":"accent","type":"color","label":"Vurgu","default":"#ff4d2e"}]'></html>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .c10-full { position: absolute; inset: 0; }
+    .c10-half { position: absolute; left: 0; width: 1080px; height: 960px; z-index: 4; }
+    #c10-bg { position: absolute; inset: 0; background: var(--bg, #eef1f6); }
+    #c10-stage { position: absolute; inset: 0; color: var(--fg, #0d1226); }
+    #c10-top { position: absolute; left: 88px; top: 250px; display: flex; gap: 22px; align-items: center; }
+    #c10-num { font: 700 38px/1 "JetBrains Mono", monospace; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+    #c10-chip { font: 400 34px/1 "Archivo Black", sans-serif; letter-spacing: 0.08em; background: var(--accent, #ff4d2e); color: var(--bg, #eef1f6); padding: 12px 20px 10px; border-radius: 6px; }
+    #c10-namewrap { position: absolute; left: 88px; top: 470px; width: 860px; }
+    #c10-name { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 110px; line-height: 1.05; letter-spacing: -0.02em; white-space: nowrap; }
+    #c10-caret { display: inline-block; width: 0.5em; height: 105px; margin-left: 6px; vertical-align: -0.12em; background: var(--accent, #ff4d2e); }
+    #c10-rule { position: absolute; left: 88px; top: 700px; width: 200px; height: 12px; background: var(--accent, #ff4d2e); }
+    #c10-desc { position: absolute; left: 88px; top: 770px; width: 820px; font: 400 100px/1.04 "Archivo Black", sans-serif; letter-spacing: -0.01em; }
+    .c10-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.06em; }
+    .c10-w { display: inline-block; }
+    #c10-icon { position: absolute; left: 88px; top: 1110px; width: 200px; height: 200px; }
+    #c10-icon svg { width: 100%; height: 100%; fill: none; stroke: var(--accent, #ff4d2e); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    #c10-icon svg * { stroke-dasharray: 1; }
+    #c10-tex { position: absolute; left: 40px; top: 1440px; white-space: nowrap; font: 400 380px/1 "Archivo Black", sans-serif; color: transparent; -webkit-text-stroke: 4px var(--accent, #ff4d2e); opacity: 0.45; }
+  </style>
+  <div id="root" data-composition-id="card-10" data-width="1080" data-height="1920">
+    <div id="c10-prev" class="c10-full" style="background:#1f3bff"></div>
+    <div id="c10-world" class="c10-full">
+      <div id="c10-bg"></div>
+      <div id="c10-stage" data-layout-allow-overflow>
+        <div id="c10-tex" data-var-text="cat" data-layout-ignore>SEO</div>
+        <div id="c10-top">
+          <span id="c10-num" data-var-text="num">10 / 12</span>
+          <span id="c10-chip" data-var-text="cat">SEO</span>
+        </div>
+        <div id="c10-namewrap"><span id="c10-name" data-var-text="name">/ai-seo</span><span id="c10-caret"></span></div>
+        <div id="c10-rule"></div>
+        <div id="c10-desc"><span class="c10-wm"><span id="c10-w0" class="c10-w">Yapay</span></span> <span class="c10-wm"><span id="c10-w1" class="c10-w">zekâ</span></span> <span class="c10-wm"><span id="c10-w2" class="c10-w">aramasında</span></span> <span class="c10-wm"><span id="c10-w3" class="c10-w">görün.</span></span></div>
+        <div id="c10-icon" data-layout-ignore><svg viewBox="0 0 24 24"><path pathLength="1" d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path pathLength="1" d="M16 7h6v6"/></svg></div>
+      </div>
+    </div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c10-world", { clipPath: "circle(0% at 84% 28%)" }, { clipPath: "circle(150% at 84% 28%)", duration: 0.34, ease: "power3.in" }, 0);
+    tl.fromTo("#c10-stage", { scale: 1.12 }, { scale: 1, duration: 0.4, ease: "power3.out", transformOrigin: "50% 30%" }, 0.06);
+    tl.fromTo("#c10-top", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "power3.out" }, 0.08);
+    tl.fromTo("#c10-name", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.34, ease: "steps(7)" }, 0.1);
+    tl.fromTo("#c10-caret", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0.44);
+    tl.fromTo("#c10-caret", { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, 0.8);
+    tl.fromTo("#c10-caret", { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, 1.15);
+    tl.fromTo("#c10-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.22, ease: "power4.out" }, 0.2);
+    tl.fromTo(".c10-w", { yPercent: 105 }, { yPercent: 0, duration: 0.24, ease: "power4.out", stagger: 0.07 }, 0.24);
+    tl.fromTo("#c10-icon svg *", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut", stagger: 0.06 }, 0.5);
+    tl.fromTo("#c10-icon", { rotation: -8, scale: 0.86 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.5);
+    tl.fromTo("#c10-tex", { x: 0 }, { x: -240, duration: 2.01, ease: "none" }, 0);
+    tl.fromTo("#c10-stage", { y: 0 }, { y: -70, duration: 0.14, ease: "power3.in", immediateRender: false }, 1.87);
+    window.__timelines["card-10"] = tl;
+  </script>
+</template>

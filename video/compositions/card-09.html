@@ -1,0 +1,59 @@
+<template>
+  <html data-composition-variables='[{"id":"num","type":"string","label":"Sıra","default":"09 / 12"},{"id":"cat","type":"string","label":"Kategori","default":"KAYNAK"},{"id":"name","type":"string","label":"Skill adı","default":"/verify-citations"},{"id":"bg","type":"color","label":"Zemin","default":"#1f3bff"},{"id":"fg","type":"color","label":"Yazı","default":"#f3f4ff"},{"id":"accent","type":"color","label":"Vurgu","default":"#ffd23f"}]'></html>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .c09-full { position: absolute; inset: 0; }
+    .c09-half { position: absolute; left: 0; width: 1080px; height: 960px; z-index: 4; }
+    #c09-bg { position: absolute; inset: 0; background: var(--bg, #1f3bff); }
+    #c09-stage { position: absolute; inset: 0; color: var(--fg, #f3f4ff); }
+    #c09-top { position: absolute; left: 88px; top: 250px; display: flex; gap: 22px; align-items: center; }
+    #c09-num { font: 700 38px/1 "JetBrains Mono", monospace; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+    #c09-chip { font: 400 34px/1 "Archivo Black", sans-serif; letter-spacing: 0.08em; background: var(--accent, #ffd23f); color: var(--bg, #1f3bff); padding: 12px 20px 10px; border-radius: 6px; }
+    #c09-namewrap { position: absolute; left: 88px; top: 470px; width: 860px; }
+    #c09-name { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 80px; line-height: 1.05; letter-spacing: -0.02em; white-space: nowrap; }
+    #c09-caret { display: inline-block; width: 0.5em; height: 76px; margin-left: 6px; vertical-align: -0.12em; background: var(--accent, #ffd23f); }
+    #c09-rule { position: absolute; left: 88px; top: 700px; width: 200px; height: 12px; background: var(--accent, #ffd23f); }
+    #c09-desc { position: absolute; left: 88px; top: 770px; width: 820px; font: 400 100px/1.04 "Archivo Black", sans-serif; letter-spacing: -0.01em; }
+    .c09-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.06em; }
+    .c09-w { display: inline-block; }
+    #c09-icon { position: absolute; left: 88px; top: 1110px; width: 200px; height: 200px; }
+    #c09-icon svg { width: 100%; height: 100%; fill: none; stroke: var(--accent, #ffd23f); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    #c09-icon svg * { stroke-dasharray: 1; }
+    #c09-tex { position: absolute; left: 40px; top: 1440px; white-space: nowrap; font: 400 380px/1 "Archivo Black", sans-serif; color: transparent; -webkit-text-stroke: 4px var(--accent, #ffd23f); opacity: 0.45; }
+  </style>
+  <div id="root" data-composition-id="card-09" data-width="1080" data-height="1920">
+    
+    <div id="c09-world-static" class="c09-full">
+      <div id="c09-bg"></div>
+      <div id="c09-stage" data-layout-allow-overflow>
+        <div id="c09-tex" data-var-text="cat" data-layout-ignore>KAYNAK</div>
+        <div id="c09-top">
+          <span id="c09-num" data-var-text="num">09 / 12</span>
+          <span id="c09-chip" data-var-text="cat">KAYNAK</span>
+        </div>
+        <div id="c09-namewrap"><span id="c09-name" data-var-text="name">/verify-citations</span><span id="c09-caret"></span></div>
+        <div id="c09-rule"></div>
+        <div id="c09-desc"><span class="c09-wm"><span id="c09-w0" class="c09-w">Uydurma</span></span> <span class="c09-wm"><span id="c09-w1" class="c09-w">kaynağa</span></span> <span class="c09-wm"><span id="c09-w2" class="c09-w">geçit</span></span> <span class="c09-wm"><span id="c09-w3" class="c09-w">yok.</span></span></div>
+        <div id="c09-icon" data-layout-ignore><svg viewBox="0 0 24 24"><path pathLength="1" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path pathLength="1" d="m9 12 2 2 4-4"/></svg></div>
+      </div>
+    </div>
+    <div id="c09-prev" class="c09-full" style="background:#ff4d2e"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c09-prev", { x: 0 }, { x: -1080, duration: 0.26, ease: "power3.inOut" }, 0);
+    tl.fromTo("#c09-stage", { x: 220 }, { x: 0, duration: 0.3, ease: "power4.out" }, 0.04);
+    tl.fromTo("#c09-top", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "power3.out" }, 0.08);
+    tl.fromTo("#c09-name", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.34, ease: "steps(17)" }, 0.1);
+    tl.fromTo("#c09-caret", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0.44);
+    tl.fromTo("#c09-caret", { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, 0.8);
+    tl.fromTo("#c09-caret", { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, 1.15);
+    tl.fromTo("#c09-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.22, ease: "power4.out" }, 0.2);
+    tl.fromTo(".c09-w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out", stagger: 0.07 }, 0.24);
+    tl.fromTo("#c09-icon svg *", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut", stagger: 0.06 }, 0.5);
+    tl.fromTo("#c09-icon", { rotation: -8, scale: 0.86 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.5);
+    tl.fromTo("#c09-tex", { x: 0 }, { x: -240, duration: 2.12, ease: "none" }, 0);
+    tl.fromTo("#c09-stage", { scale: 1 }, { scale: 0.9, duration: 0.14, ease: "power3.in", immediateRender: false, transformOrigin: "84% 28%" }, 1.98);
+    window.__timelines["card-09"] = tl;
+  </script>
+</template>

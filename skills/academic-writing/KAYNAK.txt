@@ -1,0 +1,1 @@
+Kaynak: github.com/jamditis/claude-skills-journalism (MIT)

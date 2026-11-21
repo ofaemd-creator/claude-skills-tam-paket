@@ -1,0 +1,59 @@
+<template>
+  <html data-composition-variables='[{"id":"num","type":"string","label":"Sıra","default":"01 / 12"},{"id":"cat","type":"string","label":"Kategori","default":"TASARIM"},{"id":"name","type":"string","label":"Skill adı","default":"/anti-ui-slop"},{"id":"bg","type":"color","label":"Zemin","default":"#1f3bff"},{"id":"fg","type":"color","label":"Yazı","default":"#f3f4ff"},{"id":"accent","type":"color","label":"Vurgu","default":"#ffd23f"}]'></html>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .c01-full { position: absolute; inset: 0; }
+    .c01-half { position: absolute; left: 0; width: 1080px; height: 960px; z-index: 4; }
+    #c01-bg { position: absolute; inset: 0; background: var(--bg, #1f3bff); }
+    #c01-stage { position: absolute; inset: 0; color: var(--fg, #f3f4ff); }
+    #c01-top { position: absolute; left: 88px; top: 250px; display: flex; gap: 22px; align-items: center; }
+    #c01-num { font: 700 38px/1 "JetBrains Mono", monospace; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+    #c01-chip { font: 400 34px/1 "Archivo Black", sans-serif; letter-spacing: 0.08em; background: var(--accent, #ffd23f); color: var(--bg, #1f3bff); padding: 12px 20px 10px; border-radius: 6px; }
+    #c01-namewrap { position: absolute; left: 88px; top: 470px; width: 860px; }
+    #c01-name { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 107px; line-height: 1.05; letter-spacing: -0.02em; white-space: nowrap; }
+    #c01-caret { display: inline-block; width: 0.5em; height: 102px; margin-left: 6px; vertical-align: -0.12em; background: var(--accent, #ffd23f); }
+    #c01-rule { position: absolute; left: 88px; top: 700px; width: 200px; height: 12px; background: var(--accent, #ffd23f); }
+    #c01-desc { position: absolute; left: 88px; top: 770px; width: 820px; font: 400 100px/1.04 "Archivo Black", sans-serif; letter-spacing: -0.01em; }
+    .c01-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.06em; }
+    .c01-w { display: inline-block; }
+    #c01-icon { position: absolute; left: 88px; top: 1110px; width: 200px; height: 200px; }
+    #c01-icon svg { width: 100%; height: 100%; fill: none; stroke: var(--accent, #ffd23f); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    #c01-icon svg * { stroke-dasharray: 1; }
+    #c01-tex { position: absolute; left: 40px; top: 1440px; white-space: nowrap; font: 400 380px/1 "Archivo Black", sans-serif; color: transparent; -webkit-text-stroke: 4px var(--accent, #ffd23f); opacity: 0.45; }
+  </style>
+  <div id="root" data-composition-id="card-01" data-width="1080" data-height="1920">
+    
+    <div id="c01-world-static" class="c01-full">
+      <div id="c01-bg"></div>
+      <div id="c01-stage" data-layout-allow-overflow>
+        <div id="c01-tex" data-var-text="cat" data-layout-ignore>TASARIM</div>
+        <div id="c01-top">
+          <span id="c01-num" data-var-text="num">01 / 12</span>
+          <span id="c01-chip" data-var-text="cat">TASARIM</span>
+        </div>
+        <div id="c01-namewrap"><span id="c01-name" data-var-text="name">/anti-ui-slop</span><span id="c01-caret"></span></div>
+        <div id="c01-rule"></div>
+        <div id="c01-desc"><span class="c01-wm"><span id="c01-w0" class="c01-w">Sıradan</span></span> <span class="c01-wm"><span id="c01-w1" class="c01-w">arayüze</span></span> <span class="c01-wm"><span id="c01-w2" class="c01-w">son.</span></span></div>
+        <div id="c01-icon" data-layout-ignore><svg viewBox="0 0 24 24"><rect pathLength="1" x="3" y="3" width="18" height="7" rx="1"/><rect pathLength="1" x="3" y="14" width="9" height="7" rx="1"/><rect pathLength="1" x="16" y="14" width="5" height="7" rx="1"/></svg></div>
+      </div>
+    </div>
+    <div id="c01-prev" class="c01-full" style="background:#0d1226"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c01-prev", { x: 0 }, { x: -1080, duration: 0.26, ease: "power3.inOut" }, 0);
+    tl.fromTo("#c01-stage", { x: 220 }, { x: 0, duration: 0.3, ease: "power4.out" }, 0.04);
+    tl.fromTo("#c01-top", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "power3.out" }, 0.08);
+    tl.fromTo("#c01-name", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.34, ease: "steps(13)" }, 0.1);
+    tl.fromTo("#c01-caret", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0.44);
+    tl.fromTo("#c01-caret", { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, 0.8);
+    tl.fromTo("#c01-caret", { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, 1.15);
+    tl.fromTo("#c01-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.22, ease: "power4.out" }, 0.2);
+    tl.fromTo(".c01-w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out", stagger: 0.07 }, 0.24);
+    tl.fromTo("#c01-icon svg *", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut", stagger: 0.06 }, 0.45);
+    tl.fromTo("#c01-icon", { rotation: -8, scale: 0.86 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.45);
+    tl.fromTo("#c01-tex", { x: 0 }, { x: -240, duration: 1.9, ease: "none" }, 0);
+    tl.fromTo("#c01-stage", { scale: 1 }, { scale: 0.9, duration: 0.14, ease: "power3.in", immediateRender: false, transformOrigin: "84% 28%" }, 1.76);
+    window.__timelines["card-01"] = tl;
+  </script>
+</template>

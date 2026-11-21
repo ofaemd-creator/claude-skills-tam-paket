@@ -1,0 +1,60 @@
+<template>
+  <html data-composition-variables='[{"id":"num","type":"string","label":"Sıra","default":"11 / 12"},{"id":"cat","type":"string","label":"Kategori","default":"STRATEJİ"},{"id":"name","type":"string","label":"Skill adı","default":"/grill-me"},{"id":"bg","type":"color","label":"Zemin","default":"#0d1226"},{"id":"fg","type":"color","label":"Yazı","default":"#eef1f6"},{"id":"accent","type":"color","label":"Vurgu","default":"#7cf0c8"}]'></html>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .c11-full { position: absolute; inset: 0; }
+    .c11-half { position: absolute; left: 0; width: 1080px; height: 960px; z-index: 4; }
+    #c11-bg { position: absolute; inset: 0; background: var(--bg, #0d1226); }
+    #c11-stage { position: absolute; inset: 0; color: var(--fg, #eef1f6); }
+    #c11-top { position: absolute; left: 88px; top: 250px; display: flex; gap: 22px; align-items: center; }
+    #c11-num { font: 700 38px/1 "JetBrains Mono", monospace; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+    #c11-chip { font: 400 34px/1 "Archivo Black", sans-serif; letter-spacing: 0.08em; background: var(--accent, #7cf0c8); color: var(--bg, #0d1226); padding: 12px 20px 10px; border-radius: 6px; }
+    #c11-namewrap { position: absolute; left: 88px; top: 470px; width: 860px; }
+    #c11-name { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 110px; line-height: 1.05; letter-spacing: -0.02em; white-space: nowrap; }
+    #c11-caret { display: inline-block; width: 0.5em; height: 105px; margin-left: 6px; vertical-align: -0.12em; background: var(--accent, #7cf0c8); }
+    #c11-rule { position: absolute; left: 88px; top: 700px; width: 200px; height: 12px; background: var(--accent, #7cf0c8); }
+    #c11-desc { position: absolute; left: 88px; top: 770px; width: 820px; font: 400 100px/1.04 "Archivo Black", sans-serif; letter-spacing: -0.01em; }
+    .c11-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.06em; }
+    .c11-w { display: inline-block; }
+    #c11-icon { position: absolute; left: 88px; top: 1110px; width: 200px; height: 200px; }
+    #c11-icon svg { width: 100%; height: 100%; fill: none; stroke: var(--accent, #7cf0c8); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    #c11-icon svg * { stroke-dasharray: 1; }
+    #c11-tex { position: absolute; left: 40px; top: 1440px; white-space: nowrap; font: 400 380px/1 "Archivo Black", sans-serif; color: transparent; -webkit-text-stroke: 4px var(--accent, #7cf0c8); opacity: 0.45; }
+  </style>
+  <div id="root" data-composition-id="card-11" data-width="1080" data-height="1920">
+    
+    <div id="c11-world-static" class="c11-full">
+      <div id="c11-bg"></div>
+      <div id="c11-stage" data-layout-allow-overflow>
+        <div id="c11-tex" data-var-text="cat" data-layout-ignore>STRATEJİ</div>
+        <div id="c11-top">
+          <span id="c11-num" data-var-text="num">11 / 12</span>
+          <span id="c11-chip" data-var-text="cat">STRATEJİ</span>
+        </div>
+        <div id="c11-namewrap"><span id="c11-name" data-var-text="name">/grill-me</span><span id="c11-caret"></span></div>
+        <div id="c11-rule"></div>
+        <div id="c11-desc"><span class="c11-wm"><span id="c11-w0" class="c11-w">Planını</span></span> <span class="c11-wm"><span id="c11-w1" class="c11-w">acımasızca</span></span> <span class="c11-wm"><span id="c11-w2" class="c11-w">sorgular.</span></span></div>
+        <div id="c11-icon" data-layout-ignore><svg viewBox="0 0 24 24"><path pathLength="1" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
+      </div>
+    </div>
+    <div id="c11-prevA" class="c11-half" style="top:0;background:#eef1f6"></div><div id="c11-prevB" class="c11-half" style="top:960px;background:#eef1f6"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c11-prevA", { y: 0 }, { y: -960, duration: 0.28, ease: "power3.in" }, 0);
+    tl.fromTo("#c11-prevB", { y: 0 }, { y: 960, duration: 0.28, ease: "power3.in" }, 0);
+    tl.fromTo("#c11-stage", { y: 90 }, { y: 0, duration: 0.34, ease: "power4.out" }, 0.08);
+    tl.fromTo("#c11-top", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "power3.out" }, 0.08);
+    tl.fromTo("#c11-name", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.34, ease: "steps(9)" }, 0.1);
+    tl.fromTo("#c11-caret", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 0.44);
+    tl.fromTo("#c11-caret", { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, 0.8);
+    tl.fromTo("#c11-caret", { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, 1.15);
+    tl.fromTo("#c11-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.22, ease: "power4.out" }, 0.2);
+    tl.fromTo(".c11-w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power2.out", stagger: 0.07 }, 0.24);
+    tl.fromTo("#c11-icon svg *", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut", stagger: 0.06 }, 0.45);
+    tl.fromTo("#c11-icon", { rotation: -8, scale: 0.86 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.45);
+    tl.fromTo("#c11-tex", { x: 0 }, { x: -240, duration: 2.18, ease: "none" }, 0);
+    tl.fromTo("#c11-stage", { scale: 1 }, { scale: 1.06, duration: 0.1, ease: "power2.in", immediateRender: false }, 2.04);
+    window.__timelines["card-11"] = tl;
+  </script>
+</template>
